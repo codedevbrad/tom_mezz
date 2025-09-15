@@ -1,0 +1,48 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Services from "../../layouts/service/index.astro";
+import { services, slugify } from "../../data";
+
+// Build-time: create one page per service
+export async function getStaticPaths() {
+  return services.map((s) => ({
+    params: { slug: (s as any).slug ?? slugify(s.title) }, // use s.slug if you add one later
+    props: { service: s }
+  }));
+}
+
+const { service } = Astro.props;
+
+const title = service.pageData?.title || service.title;
+const description = service.pageData?.description || service.description;
+
+const features = (service.pageData?.features ?? []).map((f: any) =>
+  typeof f === 'string'
+    ? { title: f, description: '' }
+    : f
+);
+
+const sections = (service.pageData?.sections ?? []).map((s: any) => ({
+  heading: s.title ?? s.heading ?? '',
+  text: s.description ?? s.text ?? '',
+  image: s.image,
+  reverse: s.reverse ?? false
+}));
+
+const galleryImages = service.pageData?.galleryImages ?? [];
+const faqs = (service.pageData?.faqs ?? []).map((f: any) => ({
+  question: f.q ?? f.question ?? '',
+  answer: f.a ?? f.answer ?? ''
+}));
+---
+
+<Layout title={title} description={description}>
+  <Services
+    title={title}
+    question="Got a drawing or idea? Let’s make it real."
+    features={features}
+    sections={sections}
+    galleryImages={galleryImages}
+    faqs={faqs}
+  />
+</Layout>

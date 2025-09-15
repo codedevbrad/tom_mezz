@@ -1,0 +1,120 @@
+---
+import OpeningTimes from "../../../components/openingTimes"
+import { data, navLinks } from "../../../data"
+
+const { number, whatsapp, companyEmail, socials } = data
+---
+
+<style>
+  footer {
+    background: #111;
+    color: #ccc;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .footer-col {
+    flex: 1 1 180px;
+    min-width: 160px;
+    margin: 0.5rem 0;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .footer-col a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+    font-size: 0.88rem;
+  }
+
+  .footer-col a:hover {
+    color: #f1c40f;
+  }
+
+  /* 🔵 Medium screens (tablets) */
+  @media (max-width: 1024px) {
+    footer {
+      justify-content: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-col {
+      flex: 1 1 45%;
+    }
+  }
+
+  /* 🔵 Small screens (phones) */
+  @media (max-width: 600px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      gap: 1rem;
+    }
+
+    .footer-col {
+      flex: 1 1 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+    }
+
+    .footer-col a {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<footer>
+  <div class="footer-col">
+    <h4>Monton Metalwork</h4>
+    <p>Designed for strength and style.<br />Manchester-based steel fabrication specialists.</p>
+  </div>
+
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    {navLinks.map((link) => (
+      link.isDropdown ? (
+        <>
+          <span><strong>{link.label}</strong></span>
+          {link.subItems.map((sub) => (
+            <a href={sub.href}>{sub.label}</a>
+          ))}
+        </>
+      ) : (
+        <a href={link.href}>{link.label}</a>
+      )
+    ))}
+  </div>
+
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <a href={`mailto:${companyEmail}`}>{companyEmail}</a>
+    <a href={`tel:${number.replace(/\s+/g, '')}`}>{number}</a>
+    <a href={whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </div>
+
+  <div class="footer-col">
+    <h4>Follow Us</h4>
+    {socials.map((item) => (
+      <a href={item.url} target="_blank" rel="noopener noreferrer">{item.name}</a>
+    ))}
+  </div>
+
+  <OpeningTimes />
+</footer>

@@ -1,0 +1,226 @@
+---
+import { Image } from 'astro:assets';
+
+// layouts/service/index.astro
+
+interface Section {
+  heading: string;
+  text: string;
+  image: string;
+  reverse?: boolean;
+}
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  question: string;
+  features: Feature[];
+  sections: Section[];
+  galleryImages: string[];
+  faqs: FAQ[];
+}
+
+const { title, question , features, sections, galleryImages, faqs } = Astro.props;
+---
+
+<style>
+  /* --- All your CSS from before --- */
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .section.reverse {
+    flex-direction: row-reverse;
+  }
+  .section img,
+  .gallery-grid img {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+  .text-block {
+    max-width: 500px;
+  }
+  .text-block h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+  }
+  .text-block p {
+    line-height: 1.6;
+  }
+  .gallery {
+    padding: 4rem 2rem;
+  }
+  .gallery h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  .gallery-grid img:hover {
+    transform: scale(1.03);
+  }
+  .faq {
+    padding: 4rem 2rem;
+  }
+  .faq-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  .faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+  }
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+  }
+  .faq-item[open] {
+    border-color: #3c4548;
+    background-color: #f0f0f0;
+  }
+  .faq-item p {
+    margin-top: 0.75rem;
+    color: #444;
+    line-height: 1.5;
+  }
+  .feature-grid {
+    padding: 4rem 2rem;
+  }
+  .feature-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    color: #222;
+  }
+  .feature-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .feature {
+    flex: 1 1 250px;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.2s ease;
+  }
+  .feature:hover {
+    transform: translateY(-4px);
+  }
+  .feature strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .feature p {
+    line-height: 1.5;
+  }
+
+  .question-title {
+    color: white;
+    line-height: 1.3;
+    font-size: 2rem;
+    text-align: center; 
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+
+</style>
+
+<section class="feature-grid">
+  <h3 class="feature-title"> 
+    { title }
+  </h3>
+
+  <div class="question-title">
+    {question}
+  </div>
+
+
+  <div class="feature-items">
+    {features.map((f) => (
+      <div class="feature">
+        <strong>{f.title}</strong>
+        <p>{f.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+{sections.map((s) => (
+  <section class={`section ${s.reverse ? 'reverse' : ''}`}>
+    <Image src={s.image} alt={s.heading} width={500} height={200} />
+    <div class="text-block">
+      <h2>{s.heading}</h2>
+      <p>{s.text}</p>
+    </div>
+  </section>
+))}
+
+<section class="gallery">
+  <h3>Project Gallery</h3>
+  <div class="gallery-grid">
+    {galleryImages.map((img, i) => (
+      <Image src={img} alt={`Gallery image ${i + 1}`} width={500} height={300} />
+    ))}
+  </div>
+</section>
+
+<section class="faq">
+  <h3 class="faq-title">Frequently Asked Questions</h3>
+  <div class="faq-container">
+    {faqs.map((f) => (
+      <details class="faq-item">
+        <summary>{f.question}</summary>
+        <p>{f.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,60 @@
+* { 
+  box-sizing: border-box; margin: 0; padding: 0; 
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; background-color: E8FFD7; color: #222; line-height: 1.6; 
+    overflow-x: hidden;
+}
+
+.main-content {
+  background-color: var(--color-1);
+}
+
+.main-header {
+  background-color: var(--color-2);
+}
+
+.call-banner {
+  background-color: var(--color-3);
+}
+
+.feature {
+  background-color: var(--color-2);
+}
+
+.question-title {
+  background-color: var(--color-2);
+}
+
+.splash-title {    
+    background-color: var(--color-3);
+}
+
+/* Button style for 'Get a Quote' */
+.quote-btn {
+  background: #ffc107;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.quote-btn:hover {
+  background: #b63815;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.quote-btn:active {
+  transform: translateY(0);
+}
+
+:root {
+  --color-1: #0F172A; /* Deep Navy */
+  --color-2: #1E293B; /* Slate Grey */
+  --color-3: #38BDF8; /* Sky Accent */
+  --color-4: #F1F5F9; /* Light Neutral */
+}

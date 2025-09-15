@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+  .cta {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-content {
+  width: 70%;
+}
+
+.cta-form {
+  background: white;
+  width: 100%;
+  padding: 3rem;
+}
+
+.cta-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.cta-description {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.cta-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-button {
+  padding: 0.7rem 1.4rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #555;
+}
+</style>
+
+<Layout>
+    <section class="cta" id="quote">
+      <div class="cta-content">
+          <h2 class="cta-title">Request a Quote</h2>
+          <p class="cta-description">
+            Need a custom steel solution? Fill out the form below and we’ll get back to you with a free, no-obligation quote. Whether it’s a small job or a large-scale project, we’re here to help.
+          </p>
+
+          <div class="cta-form">
+           <iframe data-tally-src="https://tally.so/embed/w8XvQo?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="100" frameborder="0" marginheight="0" marginwidth="0" title="laser cutting"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+          </div>
+      </div>
+    </section>
+</Layout>
