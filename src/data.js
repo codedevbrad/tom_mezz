@@ -1,7 +1,7 @@
 const number = '+44 7933 512 287'
 const whatsapp = `https://wa.me/${number.replace(/\s+/g, '')}?text=Hello%2C%20I%27m%20interested%20in%20your%20mezzanine%20floor%20services`
 
-export const logo = 'https://res.cloudinary.com/dnph27ksd/image/upload/v1757519986/new_lgo_u9y5kl.png'
+export const logo = 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758382062/mezz_rnwdis.png'
 
 export const slugify = (s) =>
   s.toLowerCase().trim().replace(/&/g, ' and ')
@@ -285,7 +285,7 @@ export const galleryImages = [
 ]
 
 export const data = {
-  title: ' Mezzanine Floors',
+  title: 'UK Mezzanine',
   titleAlt: ['Mezzanine', 'floors'],
   slogan: 'Create Space Without Moving.',
   slogan2: 'Engineered Mezzanines • Fast Turnaround • Building Control Ready.',

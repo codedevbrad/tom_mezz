@@ -1,10 +1,10 @@
 import './style.css'
 
-export default function WelcomeTitle ( ) {
+export default function WelcomeTitle () {
     return (
         <section class="splash-title">
             <h1>
-                Precision Laser Cutting & Bespoke Metalwork.
+                Bespoke Mezzanine Floors – Design, Supply & Installation.
             </h1>
         </section>
     )
