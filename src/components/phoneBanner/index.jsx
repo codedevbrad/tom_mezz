@@ -49,7 +49,7 @@ export default function MobileCallBanner() {
         .call-link {
           padding: 6px 12px;
           border-radius: 4px;
-          color: #fff;
+          color: black;
           text-decoration: none;
           font-weight: 600;
           white-space: nowrap;
