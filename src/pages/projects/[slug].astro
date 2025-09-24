@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Project from "../../layouts/projects/index.astro";
+import { projects, slugify } from "../../data";
+
+// Build-time: create one page per project
+export async function getStaticPaths() {
+  return projects.map((p) => ({
+    params: { slug: (p as any).slug ?? slugify(p.title) }, // supports p.slug if you add one
+    props: { project: p }
+  }));
+}
+
+const { project } = Astro.props;
+
+// Top-level fallbacks
+const title = project.pageData?.title || project.title;
+const description = project.pageData?.description || project.description;
+
+// Normalise optional arrays/objects just like the service page
+const features = (project.pageData?.features ?? []).map((f: any) =>
+  typeof f === "string" ? { title: f, description: "" } : f
+);
+
+const sections = (project.pageData?.sections ?? []).map((s: any) => ({
+  heading: s.title ?? s.heading ?? "",
+  text: s.description ?? s.text ?? "",
+  image: s.image,
+  reverse: s.reverse ?? false
+}));
+
+const galleryImages = project.pageData?.galleryImages ?? [];
+const faqs = (project.pageData?.faqs ?? []).map((f: any) => ({
+  question: f.q ?? f.question ?? "",
+  answer: f.a ?? f.answer ?? ""
+}));
+
+// Keep any meta the Project layout can show (client, location, stats, etc.)
+const pageData = {
+  ...project.pageData,
+  features,
+  sections,
+  galleryImages,
+  faqs
+};
+---
+
+<Layout title={title} description={description}>
+  <Project
+    title={title}
+    alt={project.alt}
+    description={description}
+    link={project.link}
+    pageData={pageData}
+  />
+</Layout>

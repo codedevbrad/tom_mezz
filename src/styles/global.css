@@ -3,12 +3,13 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif; background-color: E8FFD7; color: #ffffff; line-height: 1.6; 
+    font-family: 'Montserrat', sans-serif; background-color: E8FFD7;  line-height: 1.6; 
     overflow-x: hidden;
 }
 
 .main-content {
-  background-color: var(--color-1);
+  background-color: var(--color-4);
+  color: black;
 }
 
 .main-header {

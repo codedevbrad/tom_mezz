@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets';
+import Hero from './hero/index.jsx';
+import SingleImageGallery from '../../components/gallery';
+interface Stat { label: string; value: string; }
+interface Feature { title: string; description: string; }
+interface Section { heading: string; text: string; image: string; reverse?: boolean; }
+
+interface PageData {
+  heroImage?: string;
+  client?: string;
+  location?: string;
+  value?: string;
+  duration?: string;
+  completed?: string;
+  highlights?: string[];
+  features?: Feature[];
+  sections?: Section[];
+  stats?: Stat[];
+  galleryImages?: string[];
+  faqs?: { q: string; a: string }[];
+}
+
+interface Props {
+  title: string;
+  alt: string;
+  description: string;
+  link: string;
+  pageData: PageData;
+}
+
+const { title, alt, description, link, pageData } = Astro.props;
+---
+
+<style>
+ .project-page {
+    padding-top: 80px;
+ }
+  .features { padding:3rem 2rem; }
+  .features h3 { color:#fff; text-align:center; margin-bottom:1.5rem; }
+  .feature-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+  .feature { background:#0b1220; color:#fff; padding:1rem; border-radius:10px; }
+  .section { display:flex; gap:2rem; align-items:center; justify-content:center; padding:3rem 2rem; flex-wrap:wrap; }
+  .section.reverse { flex-direction: row-reverse; }
+  .section h2 { color:#fff; margin:0 0 .5rem; }
+  .section p { color:#e5e7eb; }
+  .gallery { padding:3rem 2rem; }
+  .gallery h3 { color:#fff; text-align:center; margin-bottom:1rem; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+  .faq { padding:3rem 2rem; }
+  .faq h3 { color:#fff; text-align:center; margin-bottom:1rem; }
+  .faq details { background:#fff; color:#111; border-radius:8px; padding:1rem; margin:.75rem auto; max-width:800px; }
+  @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; } }
+</style>
+
+<div class="project-page">
+    <Hero title={title} alt={alt} description={description} pageData={pageData} />s
+
+    {pageData.features && pageData.features.length > 0 && (
+    <section class="features">
+        <h3>Key Features</h3>
+        <div class="feature-grid">
+        {pageData.features.map(f => (
+            <div class="feature">
+            <strong>{f.title}</strong>
+            <p>{f.description}</p>
+            </div>
+        ))}
+        </div>
+    </section>
+    )}
+
+    {pageData.sections && pageData.sections.map(s => (
+    <section class={`section ${s.reverse ? 'reverse' : ''}`}>
+        <div style="max-width:520px">
+        <h2>{s.heading}</h2>
+        <p>{s.text}</p>
+        </div>
+        <Image src={s.image} alt={s.heading} width={520} height={320} style={{ borderRadius: '10px', objectFit: 'cover' }} />
+    </section>
+    ))}
+
+    <SingleImageGallery images={pageData.galleryImages} client:load/>
+
+    {pageData.faqs && pageData.faqs.length > 0 && (
+    <section class="faq">
+        <h3>Project FAQs</h3>
+        {pageData.faqs.map((f) => (
+        <details>
+            <summary>{f.question}</summary>
+            <p>{f.answer}</p>
+        </details>
+        ))}
+    </section>
+    )}
+
+</div>
+

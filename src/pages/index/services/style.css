@@ -6,7 +6,7 @@
 .services-section h2 {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
-  color: white;
+  color: black;
 }
 
 
@@ -63,7 +63,8 @@
 
 .service-card img {
   width: 90%;
-  height: 300px;
+  width: 330px;
+  height: 260px;
   margin-bottom: clamp(0.5rem, 1vw, 1rem);
   border-radius: 6px;
 }

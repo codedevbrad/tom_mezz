@@ -1,17 +1,19 @@
-const number = '+44 7933 512 287'
+const number = '0161 524 7946'
 const whatsapp = `https://wa.me/${number.replace(/\s+/g, '')}?text=Hello%2C%20I%27m%20interested%20in%20your%20mezzanine%20floor%20services`
 
 export const logo = 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758382062/mezz_rnwdis.png'
+
 
 export const slugify = (s) =>
   s.toLowerCase().trim().replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)+/g, '')
 
+
 export const services = [
   {
     title: 'Mezzanine Floors',
-    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997848/20250730_163525_teowmx.jpg',
+    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552791/20200722_150920_b7wgzv.jpg',
     alt: 'Mezzanine Floor Design and Installation',
     description:
       'Design, fabricate, and install single or multi-tier mezzanine floors to unlock warehouse and retail space. CE/UKCA marked steel with full calculations.',
@@ -55,7 +57,7 @@ export const services = [
   },
   {
     title: 'Staircases, Handrails & Pallet Gates',
-    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997845/20250723_091140_mngprj.jpg',
+    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552856/20240517_094840_qwoxly.jpg',
     alt: 'Mezzanine Access Staircases and Safety',
     description:
       'BS-compliant staircases, mid-landings, handrails, toe-boards, and pallet safety gates tailored to your mezzanine layout.',
@@ -96,48 +98,8 @@ export const services = [
     }
   },
   {
-    title: 'Fire Protection & Building Control',
-    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997566/20210430_115018_hcize0.jpg',
-    alt: 'Mezzanine Fire Rating and Building Regulations',
-    description:
-      'Fire rating packages: column encasements, bulkheads, suspended ceilings, and compartmentation with documentation for approval.',
-    link: 'services/fire-protection',
-    pageData: {
-      title: 'Mezzanine Fire Rating & Building Regs Support',
-      description:
-        'From strategy to sign-off: we design and install fire protection to meet building control and insurer requirements.',
-      keywords: [
-        'mezzanine fire protection',
-        'mezzanine building regs',
-        'fire rating mezzanine',
-        'building control approval'
-      ],
-      features: [
-        '✔ Column & beam encasement',
-        '✔ Bulkheads & suspended ceilings',
-        '✔ Fire stopping & signage',
-        '✔ O&M manuals and certs'
-      ],
-      sections: [
-        {
-          title: 'Approved Details, Clean Finishes',
-          description:
-            'We coordinate fire protection with lighting, sprinklers, and HVAC so your mezzanine remains practical and easy to maintain.',
-          image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997566/20210430_115018_hcize0.jpg'
-        }
-      ],
-      galleryImages: [
-        'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997758/20231222_072344_xgif2l.jpg'
-      ],
-      faqs: [
-        { q: 'Do all mezzanines need fire rating?', a: 'It depends on usage, size, and occupancy—we advise after survey.' },
-        { q: 'Do you liaise with building control?', a: 'Yes, we provide drawings and attend as needed.' }
-      ]
-    }
-  },
-  {
     title: 'Decking, Racking & Suspended Platforms',
-    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997667/20230602_085528_hboh7b.jpg',
+    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552841/20240220_104425_by9qvs.jpg',
     alt: 'Mezzanine Decking and Racking Integration',
     description:
       'Particle board, durbar and open-mesh decking options with racking tie-ins, conveyor openings, and service penetrations.',
@@ -179,7 +141,7 @@ export const services = [
   },
   {
     title: 'Survey, Load Calcs & Project Management',
-    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997836/20250702_071233_ggvyat.jpg',
+    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552737/20200629_162758_dxwf6u.jpg',
     alt: 'Mezzanine Site Survey and Calculations',
     description:
       'End-to-end delivery: measured survey, structural calculations, method statements, and on-site management to programme.',
@@ -220,7 +182,7 @@ export const services = [
   },
   {
     title: 'Repairs, Moves & Extensions',
-    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997754/20231112_140813_ilwvnc.jpg',
+    image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552763/20200703_120854_fkehln.jpg',
     alt: 'Mezzanine Repairs and Extensions',
     description:
       'Extend capacity, relocate existing systems, or repair damaged members with certified welding and new calcs.',
@@ -260,6 +222,77 @@ export const services = [
   }
 ]
 
+
+export const projects = [
+  {
+    title: 'Amazon Fulfilment Centre Mezzanine',
+    alt: 'Multi-tier mezzanine with stairs, pallet gates and fire protection at Amazon FC',
+    description:
+      'Design, fabricate and install a multi-tier mezzanine to increase pick-face density with compliant access, protection and fire strategy.',
+    link: 'projects/amazon-fulfilment-centre',
+    // slug: 'amazon-fulfilment-centre', // optional; otherwise slugify(title)
+    pageData: {
+      title: 'Amazon Fulfilment Centre - Multi-Tier Mezzanine',
+      description:
+        '≈1,200 m² multi-tier mezzanine with 5.0 kN/m² UDL, compliant access, pallet gates and integrated fire strategy.',
+      heroImage: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552894/hPI3yR2w_py1o2c.jpg',
+      client: 'Amazon (3PL partner)',
+      location: 'UK Fulfilment Centre',
+      value: '£850k',
+      duration: '7 weeks on site',
+      completed: 'March 2025',
+      highlights: [
+        'Multi-tier mezzanine (~1,200 m²) with 5.0 kN/m² UDL',
+        'Access & escape stairs, pallet gates, edge protection',
+        'Conveyor/M&E penetrations coordinated',
+        'Fire strategy incl. column encasement & bulkheads'
+      ],
+      features: [
+        { title: 'Engineered for Throughput', description: 'Column grid and beam sizing optimised around pick routes.' },
+        { title: 'Fast Programme', description: 'Off-site fabrication + JIT deliveries.' },
+        { title: 'Compliance Built-In', description: 'SE-signed calcs, RAMS, O&M, and building control liaison.' }
+      ],
+      sections: [
+        {
+          heading: 'Scope & Objectives',
+          text: 'Increase storage density and throughput without expanding the footprint; integrate with racking and MHE while maintaining egress.',
+          image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552898/N_53KU5A_gtc7xk.jpg'
+        },
+        {
+          heading: 'Engineering & Coordination',
+          text: 'Penetrations planned for conveyors, sprinklers and cabling. Columns/bracing modelled to keep FLT clearances and escape widths.',
+          image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552907/YdVM9dFQ_wotlgy.jpg',
+          reverse: true
+        },
+        {
+          heading: 'Install & Handover',
+          text: 'Night works limited disruption. Issued O&M, as-builts and certification on completion.',
+          image: 'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997754/20231112_140813_ilwvnc.jpg'
+        }
+      ],
+      stats: [
+        { label: 'Area Added', value: '≈1,200 m²' },
+        { label: 'UDL', value: '5.0 kN/m²' },
+        { label: 'Staircases', value: '4' },
+        { label: 'Pallet Gates', value: '6' }
+      ],
+      galleryImages: [
+        'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552920/ZXG5qO7g_xz81sq.jpg',
+        'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552914/fG70Obdw_neurwe.jpg',
+        'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552910/N8gYGSpg_favrbs.jpg',
+        'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552907/YdVM9dFQ_wotlgy.jpg',
+        'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552898/N_53KU5A_gtc7xk.jpg',
+        'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552894/hPI3yR2w_py1o2c.jpg'
+      ],
+      faqs: [
+        { q: 'Did works run during operations?', a: 'Yes - night shifts and segregated zones kept lines running.' },
+        { q: 'Who handled building control?', a: 'We provided drawings, calcs and liaised directly to sign-off.' }
+      ]
+    }
+  }
+];
+
+
 export const expertise = [
   {
     title: 'Structural Engineering',
@@ -278,15 +311,17 @@ export const expertise = [
   }
 ]
 
+
 export const galleryImages = [
   'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997848/20250730_163525_teowmx.jpg',
   'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997758/20231222_072344_xgif2l.jpg',
   'https://res.cloudinary.com/dnph27ksd/image/upload/v1756997754/20231112_140813_ilwvnc.jpg'
-]
+];
+
 
 export const data = {
-  title: 'UK Mezzanine',
-  titleAlt: ['Mezzanine', 'floors'],
+  title: 'UK MEZZANINE',
+  titleAlt: ['UK', 'MEZZANINE'],
   slogan: 'Create Space Without Moving.',
   slogan2: 'Engineered Mezzanines • Fast Turnaround • Building Control Ready.',
   number,
@@ -306,6 +341,7 @@ export const data = {
   ]
 }
 
+
 export const navLinks = [
   { label: 'HOME', href: '/#' },
   {
@@ -313,7 +349,12 @@ export const navLinks = [
     isDropdown: true,
     subItems: services.map(s => ({ label: s.title, href: `/services/${slugify(s.title)}` }))
   },
+  {
+    label: 'PROJECTS',
+    isDropdown: true,
+    subItems: projects.map(p => ({ label: p.title, href: `/projects/${slugify(p.title)}` }))
+  },
   { label: 'ABOUT US', href: '/#about' },
   { label: 'GALLERY', href: '/#gallery' },
   { label: 'CONTACT US', href: '/quote' }
-]
+];

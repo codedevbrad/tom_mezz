@@ -82,8 +82,8 @@ const { number, whatsapp, companyEmail, socials } = data
 
 <footer>
   <div class="footer-col">
-    <h4>Monton Metalwork</h4>
-    <p>Designed for strength and style.<br />Manchester-based steel fabrication specialists.</p>
+    <h4>{data.title}</h4>
+    <p> { data.slogan2} </p>
   </div>
 
   <div class="footer-col">
@@ -104,7 +104,6 @@ const { number, whatsapp, companyEmail, socials } = data
 
   <div class="footer-col">
     <h4>Contact</h4>
-    <a href={`mailto:${companyEmail}`}>{companyEmail}</a>
     <a href={`tel:${number.replace(/\s+/g, '')}`}>{number}</a>
     <a href={whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
   </div>

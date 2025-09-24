@@ -134,7 +134,7 @@ export default function Header() {
             <nav className="main-nav" aria-label="Primary">
               {navLinks.map((link, idx) =>
                 link.isDropdown ? (
-                  <Dropdown key={idx} title={link.label} links={link.subItems} />
+                  <Dropdown label={link.label} key={idx} title={link.label} links={link.subItems} />
                 ) : (
                   <a key={idx} href={link.href}>
                     {link.label}
