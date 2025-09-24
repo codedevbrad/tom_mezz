@@ -22,7 +22,7 @@ export default function AboutSection() {
         </div>
         <div className="about-image">
            <video
-              src="https://res.cloudinary.com/dnph27ksd/video/upload/v1756997723/20230928_174253_injha1.mp4"
+              src="https://res.cloudinary.com/dnph27ksd/video/upload/v1758724414/mezz_ljhakr.mp4"
               autoPlay
               muted
               loop
