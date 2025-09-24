@@ -326,8 +326,8 @@ export const galleryImages = [
 
 
 export const data = {
-  title: 'UK MEZZANINE',
-  titleAlt: ['UK', 'MEZZANINE'],
+  title: 'UK MEZZANINES',
+  titleAlt: ['UK', 'MEZZANINES'],
   slogan: 'Create Space Without Moving.',
   slogan2: 'Engineered Mezzanines • Fast Turnaround • Building Control Ready.',
   number,
