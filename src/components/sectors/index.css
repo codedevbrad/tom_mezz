@@ -1,0 +1,145 @@
+.mzSectors {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 12px 48px; /* room for arrows */
+}
+/* Header */
+.mzHeader {
+  text-align: center;
+  margin: 18px 0 6px;
+}
+.mzHeader__title {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  line-height: 1.15;
+  font-weight: 800;
+  color: #0f172a; /* slate-900-ish */
+  letter-spacing: -0.02em;
+}
+.mzHeader__desc {
+  margin: 0 auto 8px;
+  max-width: 880px;
+  color: #334155; /* slate-600-ish */
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.6;
+}
+
+
+.mzTrack {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding: 8px 0 14px;
+  cursor: grab;
+  outline: none;
+}
+.mzTrack.is-dragging { cursor: grabbing; }
+
+.mzTrack::-webkit-scrollbar { height: 8px; }
+.mzTrack::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+}
+
+/* Card */
+.mzCard {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: clamp(220px, 28vw, 260px);
+  aspect-ratio: 1 / 1;   /* square tiles like screenshot */
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  scroll-snap-align: start;
+  isolation: isolate;
+  height: 230px;
+}
+
+.mzCard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.mzCard__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+  z-index: 1;
+}
+
+.mzCard__title {
+  position: absolute;
+  inset: auto 0 12%;
+  text-align: center;
+  z-index: 2;
+  margin: 0;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(16px, 2.1vw, 22px);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+  pointer-events: none;
+}
+
+/* Red floating bubble (optional) */
+.mzCard__bubble {
+  position: absolute;
+  right: -6px; /* overlap like the screenshot */
+  top: 16px;
+  z-index: 3;
+  background: #e31e34;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  line-height: 1.15;
+  box-shadow: 0 10px 24px rgba(227,30,52,0.35);
+  max-width: 230px;
+}
+
+/* Arrows */
+.mzNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display: grid;
+  place-items: center;
+}
+.mzNav--left { left: 8px; }
+.mzNav--right { right: 8px; }
+@media (hover:hover) {
+  .mzNav:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.05);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 760px) {
+  .mzSectors { padding: 8px 16px; }
+  .mzCard { min-width: 78vw; } /* show ~1 card per view on phones */
+  .mzNav { display: none; }    /* rely on swipe on mobile */
+  .mzCard__bubble {
+    position: static; display: inline-block; margin: 10px; border-radius: 8px;
+  }
+}

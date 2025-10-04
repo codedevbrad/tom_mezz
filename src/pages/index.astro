@@ -7,6 +7,8 @@ import WelcomeTitle from './index/welcomeTitle'
 import ServicesSection from './index/services'
 import AboutSection from './index/about'
 import { galleryImages } from '../data'
+import FeaturesStrip from '../components/features'
+import MezzanineSectorsCarousel from '../components/sectors'
 ---
 
 <Layout >
@@ -217,7 +219,7 @@ import { galleryImages } from '../data'
 </div>
 
 <div class="enhanced-section">
-  <ServicesSection />
+  <FeaturesStrip />
 </div>
 
 <FreeQuoteBanner />
@@ -226,7 +228,9 @@ import { galleryImages } from '../data'
   <AboutSection />
 </div>
 
-<ExpertiseSection client:load />
+<div id="expertise" class="enhanced-section">
+  <MezzanineSectorsCarousel client:load />
+</div>
 
 <section id="gallery" class="enhanced-section">
   <ImageGallery client:load images={galleryImages} />

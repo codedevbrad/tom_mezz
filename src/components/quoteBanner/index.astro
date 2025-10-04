@@ -2,10 +2,10 @@
 import { data , logo } from "../../data"
 
 const {
-  title = "Fast, Precision Laser Cutting in Manchester",
-  description = "Same-day quotes. Tight tolerances. Clean, burr-free edges. Upload DXF/DWG for instant pricing.",
+  title = "Mezzanine Floors – Double Your Space Without Moving",
+  description = "Design, fabrication & installation. Offices, storage and production areas. UKCA & building regs compliant.",
   phone = data.number,
-  buttonLabel = "Call the Laser Team",
+  buttonLabel = "Call the Mezzanine Team",
 } = Astro.props;
 ---
 
@@ -15,19 +15,19 @@ const {
       <!-- Left Section -->
       <div class="left-section">
         <!-- Logo only shows on mobile -->
-        <img src={logo} alt="Manchester Laser Cutting Logo" class="logo mobile-only" />
+        <img src={logo} alt="Mezzanines by Monton Logo" class="logo mobile-only" />
         
         <div class="quote-text">
           <h2>{title}</h2>
           <p>{description}</p>
           
           <div class="company-highlight">
-            <h3>Greater Manchester’s Laser Cutting Specialists</h3>
-            <p>High-accuracy cutting for steel, aluminium, and stainless -from one-offs to full production runs. Fast turnaround and dependable quality.</p>
+            <h3>Greater Manchester’s Mezzanine Specialists</h3>
+            <p>Value-engineered mezzanine floors for warehouses, offices and production lines. Load-rated designs, fast install, and premium finishes.</p>
             
             <div class="features">
-              <div class="feature">✓ Tight tolerances & clean, oxide-free edges</div>
-              <div class="feature">✓ Rapid turnaround, material supply & nesting support</div>
+              <div class="feature">✓ Compliant with UKCA & building regulations</div>
+              <div class="feature">✓ Turnkey: design, fabrication, install & aftercare</div>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@ const {
       <!-- Right Section -->
       <div class="right-section">
         <!-- Logo shows on desktop -->
-        <img src={logo} alt="Manchester Laser Cutting Logo" class="logo desktop-only" />
+        <img src={logo} alt="Mezzanines by Monton Logo" class="logo desktop-only" />
         
         <div class="contact-actions">
           <div class="phone-info">
@@ -51,7 +51,7 @@ const {
             </a>
             
             <a href="/quote" class="quote-button quote-link">
-              <span>Get a Laser Quote</span>
+              <span>Get a Mezzanine Quote</span>
               <span class="arrow-emoji">→</span>
             </a>
           </div>
@@ -62,433 +62,147 @@ const {
 </section>
 
 <style>
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
-  .quote-banner {
-    margin: 32px 0;
-    width: 100%;
-    padding: 0 20px;
-  }
+  .quote-banner { margin: 32px 0; width: 100%; padding: 0 20px; }
 
   .quote-inner {
     width: 95%;
-;    margin: 0 auto;
+    margin: 0 auto;
     background: linear-gradient(135deg, #0f2027 0%, #203a43 25%, #2c5364 50%, #1e3a37 75%, #0d1f1a 100%);
     border-radius: 20px;
     padding: 50px 40px;
-    box-shadow: 
-      0 20px 50px rgba(0, 0, 0, 0.25),
-      0 8px 20px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
     position: relative;
     overflow: hidden;
   }
 
   .quote-inner::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(34,197,94,0.1) 0%, transparent 50%);
     pointer-events: none;
   }
 
   .quote-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-    color: white;
-    position: relative;
-    z-index: 1;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 40px; color: white; position: relative; z-index: 1;
   }
-
   @media (min-width: 768px) {
-    .quote-content {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 60px;
-      text-align: left;
-    }
+    .quote-content { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 60px; text-align: left; }
   }
 
-  /* Left Section */
-  .left-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    max-width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .left-section {
-      align-items: flex-start;
-      max-width: 60%;
-    }
-  }
+  .left-section { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 100%; }
+  @media (min-width: 768px) { .left-section { align-items: flex-start; max-width: 60%; } }
 
   .logo {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-      background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-      0 8px 24px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    height: 100px; width: auto; object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px; backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
   }
-
-  .mobile-only.logo {
-    height: 160px;
-    padding: 20px;
-  }
-
-  .mobile-only {
-    display: block;
-  }
-
-  .desktop-only {
-    display: none;
-  }
-
+  .mobile-only.logo { height: 160px; padding: 20px; }
+  .mobile-only { display: block; }
+  .desktop-only { display: none; }
   @media (min-width: 768px) {
-    .mobile-only {
-      display: none;
-    }
-    
-    .desktop-only {
-      display: block;
-      height: 120px;
-      margin-bottom: 20px;
-    }
+    .mobile-only { display: none; }
+    .desktop-only { display: block; height: 120px; margin-bottom: 20px; }
   }
 
   .quote-text h2 {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 20px 0;
-    color: #ffffff;
-    letter-spacing: -0.025em;
+    font-weight: 700; line-height: 1.1; margin: 0 0 20px; color: #fff; letter-spacing: -0.025em;
   }
-
   .quote-text > p {
     font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-    line-height: 1.6;
-    margin: 0 0 24px 0;
-    color: #d1fae5;
-    font-weight: 400;
+    line-height: 1.6; margin: 0 0 24px; color: #d1fae5; font-weight: 400;
   }
 
-  .company-info p {
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
-    line-height: 1.7;
-    margin: 0;
-    color: #e2e8f0;
-    font-weight: 300;
-  }
-
-  .company-highlight {
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
+  .company-highlight { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
   .company-highlight h3 {
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
-    font-weight: 600;
-    color: #86efac;
-    margin: 0 0 12px 0;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.3rem, 3vw, 1.6rem); font-weight: 600; color: #86efac; margin: 0 0 12px; letter-spacing: -0.02em;
   }
-
   .company-highlight > p {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    line-height: 1.6;
-    margin: 0 0 20px 0;
-    color: #d1fae5;
-    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.6; margin: 0 0 20px; color: #d1fae5; font-weight: 400;
   }
 
-  .features {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .features { display: flex; flex-direction: column; gap: 8px; }
+  @media (min-width: 768px) { .features { flex-direction: row; gap: 24px; } }
+  .feature { font-size: clamp(0.9rem, 2vw, 1rem); color: #fff; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 
-  @media (min-width: 768px) {
-    .features {
-      flex-direction: row;
-      gap: 24px;
-    }
-  }
+  .right-section { display: flex; flex-direction: column; align-items: center; gap: 32px; flex-shrink: 0; min-width: 280px; }
+  @media (min-width: 768px) { .right-section { align-items: flex-end; text-align: right; max-width: 35%; } }
 
-  .feature {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    color: #ffffff;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  .contact-actions { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  @media (min-width: 768px) { .contact-actions { align-items: flex-end; } }
 
-  /* Right Section */
-  .right-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    flex-shrink: 0;
-    min-width: 280px;
-  }
+  .phone-info { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  @media (min-width: 768px) { .phone-info { align-items: flex-end; } }
 
-  @media (min-width: 768px) {
-    .right-section {
-      align-items: flex-end;
-      text-align: right;
-      max-width: 35%;
-    }
-  }
+  .phone-label { font-size: 0.9rem; color: #86efac; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+  .phone-number { font-size: 1.8rem; font-weight: 700; color: #fff; letter-spacing: 0.025em; }
 
-  .contact-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-  }
-
-  @media (min-width: 768px) {
-    .contact-actions {
-      align-items: flex-end;
-    }
-  }
-
-  .phone-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  @media (min-width: 768px) {
-    .phone-info {
-      align-items: flex-end;
-    }
-  }
-
-  .phone-label {
-    font-size: 0.9rem;
-    color: #86efac;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .phone-number {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #ffffff;
-    font-family: system-ui, -apple-system, sans-serif;
-    letter-spacing: 0.025em;
-  }
-
-  .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-  }
-
-  @media (min-width: 768px) {
-    .button-group {
-      align-items: flex-end;
-    }
-  }
+  .button-group { display: flex; flex-direction: column; gap: 16px; align-items: center; }
+  @media (min-width: 768px) { .button-group { align-items: flex-end; } }
 
   .quote-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 18px 32px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    min-width: 180px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    font-weight: 600; font-size: 1.1rem; padding: 18px 32px; border-radius: 12px;
+    text-decoration: none; transition: all 0.2s ease; min-width: 180px;
+    border: 1px solid rgba(255,255,255,0.1);
   }
-
   .call-button {
     background: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
-    color: #ffffff;
-    box-shadow: 
-      0 6px 20px rgba(34, 197, 94, 0.3),
-      0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #fff; box-shadow: 0 6px 20px rgba(34,197,94,0.3), 0 2px 8px rgba(0,0,0,0.1);
   }
-
   .call-button:hover {
     background: linear-gradient(135deg, #16a34a 0%, #15803d 50%, #14532d 100%);
     transform: translateY(-2px);
-    box-shadow: 
-      0 10px 28px rgba(34, 197, 94, 0.4),
-      0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 28px rgba(34,197,94,0.4), 0 4px 12px rgba(0,0,0,0.15);
   }
 
   .quote-link {
-    background: #ffc107;
-    color: black;
-    box-shadow: 
-      0 6px 20px rgba(30, 64, 175, 0.3),
-      0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #ffc107; color: black;
+    box-shadow: 0 6px 20px rgba(30,64,175,0.3), 0 2px 8px rgba(0,0,0,0.1);
   }
-
   .quote-link:hover {
     background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 50%, #1e293b 100%);
     transform: translateY(-2px);
-    box-shadow: 
-      0 10px 28px rgba(30, 64, 175, 0.4),
-      0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 28px rgba(30,64,175,0.4), 0 4px 12px rgba(0,0,0,0.15);
   }
+  .quote-button:active { transform: translateY(0); }
 
-  .quote-button:active {
-    transform: translateY(0);
-  }
+  .phone-emoji, .arrow-emoji { font-size: 1.2rem; transition: transform 0.2s ease; }
+  .quote-button:hover .phone-emoji, .quote-button:hover .arrow-emoji { transform: scale(1.1); }
 
-  .phone-emoji,
-  .arrow-emoji {
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
-  }
-
-  .quote-button:hover .phone-emoji,
-  .quote-button:hover .arrow-emoji {
-    transform: scale(1.1);
-  }
-
-  /* Mobile optimizations */
   @media (max-width: 767px) {
-    .quote-banner {
-      margin: 24px 0;
-      padding: 0 16px;
-    }
-    
-    .quote-inner {
-      padding: 40px 24px;
-      border-radius: 16px;
-    }
-    
-    .quote-content {
-      gap: 32px;
-    }
-    
-    .left-section {
-      gap: 20px;
-    }
-    
-    .right-section {
-      width: 100%;
-      min-width: auto;
-    }
-    
-    .contact-actions {
-      width: 100%;
-    }
-    
-    .button-group {
-      width: 100%;
-      align-items: center;
-    }
-    
-    .quote-button {
-      width: 100%;
-      max-width: 300px;
-      padding: 16px 28px;
-    }
-    
-    .phone-number {
-      font-size: 1.5rem;
-    }
-
-    .company-info p {
-      font-size: 0.9rem;
-    }
-
-    .company-highlight h3 {
-      font-size: 1.2rem;
-    }
-
-    .company-highlight > p {
-      font-size: 0.95rem;
-    }
-
-    .features {
-      gap: 6px;
-    }
+    .quote-banner { margin: 24px 0; padding: 0 16px; }
+    .quote-inner { padding: 40px 24px; border-radius: 16px; }
+    .quote-content { gap: 32px; }
+    .left-section { gap: 20px; }
+    .right-section { width: 100%; min-width: auto; }
+    .contact-actions { width: 100%; }
+    .button-group { width: 100%; align-items: center; }
+    .quote-button { width: 100%; max-width: 300px; padding: 16px 28px; }
+    .phone-number { font-size: 1.5rem; }
   }
 
-  /* Extra small screens */
   @media (max-width: 480px) {
-    .quote-inner {
-      padding: 32px 20px;
-      border-radius: 12px;
-    }
-    
-    .quote-content {
-      gap: 28px;
-    }
-    
-    .quote-text h2 {
-      font-size: 1.9rem;
-      margin-bottom: 16px;
-    }
-    
-    .quote-text > p {
-      font-size: 1.05rem;
-    }
-
-    .company-info p {
-      font-size: 0.85rem;
-    }
-
-    .button-group {
-      gap: 12px;
-    }
-    
-    .quote-button {
-      font-size: 1rem;
-      padding: 14px 24px;
-    }
+    .quote-inner { padding: 32px 20px; border-radius: 12px; }
+    .quote-content { gap: 28px; }
+    .quote-text h2 { font-size: 1.9rem; margin-bottom: 16px; }
+    .quote-text > p { font-size: 1.05rem; }
+    .button-group { gap: 12px; }
+    .quote-button { font-size: 1rem; padding: 14px 24px; }
   }
 
-  /* Focus accessibility */
-  .quote-button:focus {
-    outline: 3px solid rgba(134, 239, 172, 0.6);
-    outline-offset: 2px;
-  }
+  .quote-button:focus { outline: 3px solid rgba(134,239,172,0.6); outline-offset: 2px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .quote-button,
-    .phone-emoji,
-    .arrow-emoji {
-      transition: none;
-    }
-    
-    .quote-button:hover {
-      transform: none;
-    }
+    .quote-button, .phone-emoji, .arrow-emoji { transition: none; }
+    .quote-button:hover { transform: none; }
   }
 </style>

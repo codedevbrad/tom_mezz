@@ -312,6 +312,55 @@ export const expertise = [
 ]
 
 
+export const mezzanineSectors = [
+  { title: "RETAIL", image: "https://images.unsplash.com/photo-1654950370480-cd64797815db?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { title: "SELF STORAGE", image: "https://images.unsplash.com/photo-1638847868668-a05a2f69622f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { title: "AUTOMOTIVE", image: "https://plus.unsplash.com/premium_photo-1661877431388-3561c5d7f6cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { title: "BREWERIES", image: "https://images.unsplash.com/photo-1542835497-a6813df96ed9?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { title: "E-COMMERCE", image: "https://plus.unsplash.com/premium_photo-1663089993922-5d4601e1127b?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  { title: "MANUFACTURING", image: "https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+  {
+    title: "ENTERTAINMENT",
+    image: "https://images.unsplash.com/photo-1675171155224-e70a5eeb27c3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bubble: "Get a budget cost in 60 seconds"
+  },
+];
+
+
+export const features = [
+  {
+    title: "Multi Purpose",
+    body:
+      "Whether for offices, storage, or production areas, our mezzanine floors maximise your available space efficiently.",
+    cta: "Services",
+    icon: "bracket",
+  },
+  {
+    title: "Value-engineered",
+    body:
+      "Our mezzanine designs optimise steel usage, reduce material costs, and deliver long-term value for your business.",
+    cta: "About Us",
+    icon: "hands-gear",
+  },
+  {
+    title: "Custom Finished",
+    body:
+      "From bespoke floor finishes to staircases, balustrades, and pallet gates — every mezzanine is tailored to your needs.",
+    cta: "Products",
+    icon: "stitch",
+  },
+  {
+    title: "Turnkey Service",
+    body:
+      "We provide a complete solution — from design and fabrication to delivery, installation, and aftercare support.",
+    cta: "Testimonials",
+    icon: "double-arrow",
+    bubble: "Get a mezzanine budget cost in 60 seconds",
+  },
+];
+
+
+
 export const galleryImages = [
     'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552871/hPI3yR2w_cqn7sy.jpg',
     'https://res.cloudinary.com/dnph27ksd/image/upload/v1758552755/20200701_154329_z7m6su.jpg',
